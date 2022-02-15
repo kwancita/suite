@@ -1,26 +1,34 @@
 class UsersController < ApplicationController
+    skip_before_action :authenticate_user, only:[:create, :show]
 
     def show
-        users = User.find(params[:id])
-        render json: users
+        if current_user
+            render json: current_user, status: :ok
+        else
+            render json: "No one is logged in", status: :unauthorized
+        end
     end
 
     def create
         user = User.create!(user_params)
-        #byebug
+        session[:user_id] = user.id
         render json: user, status: :created
     end
 
-    def delete
-        user = User.find(user_params)
+    def destroy
+        user = find_user
         user.destroy
         head :no_content
     end
 
     private
 
+    def find_user
+        User.find(params[:id])
+    end
+
     def user_params
-        params.permit(:full_name, :username, :email, :password_digest)
+        params.permit(:full_name, :username, :email, :password)
     end
 
 

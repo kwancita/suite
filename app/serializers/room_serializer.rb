@@ -1,4 +1,3 @@
 class RoomSerializer < ActiveModel::Serializer
-  attributes :id, :name, :type, :price, :capacity, :pets, :breakfast, :description, :image
-  has_many :users 
+  attributes :id, :name, :r_type, :price, :capacity, :pets, :breakfast, :description, :image
 end

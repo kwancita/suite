@@ -83,7 +83,7 @@ const Nav = () => {
                 </MenuItem>
               ))} */}
               <MenuItem component={Link} to="/home">Home</MenuItem>
-              <MenuItem component={Link}  to="/about">About</MenuItem>
+              <MenuItem component={Link}  to="/room">Rooms</MenuItem>
               <MenuItem component={Link} to="/contact">Contact</MenuItem>
             </Menu>
           </Box>
@@ -105,8 +105,8 @@ const Nav = () => {
                 {page}
               </Button>
             ))} */}
-            <Button component={Link} to="/home" sx={{ my: 2, color: 'white', display: 'block' }} >Home</Button>
-            <Button component={Link} to="/about" sx={{ my: 2, color: 'white', display: 'block' }} >About</Button>
+            <Button component={Link} to="/" sx={{ my: 2, color: 'white', display: 'block' }} >Home</Button>
+            <Button component={Link} to="/room" sx={{ my: 2, color: 'white', display: 'block' }} >Rooms</Button>
             <Button component={Link} to="/contact" sx={{ my: 2, color: 'white', display: 'block' }} >Contact</Button>
           </Box>
 
@@ -139,7 +139,7 @@ const Nav = () => {
               ))} */}
               <MenuItem component={Link} to="/login">Login</MenuItem>
               <MenuItem component={Link} to="/account">Account</MenuItem>
-              <MenuItem onClick="" >Logout</MenuItem>
+              <MenuItem>Logout</MenuItem>
             </Menu>
           </Box>
         </Toolbar>

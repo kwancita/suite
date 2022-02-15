@@ -12,9 +12,9 @@ function Home() {
                             <h1>Welcome to TriHel</h1>
                             <p>The most comfortable and affordable hotel in flatiron. <br/>
                             Get away from coding, let us take care your vacation</p>
-                            </div>
+                        </div>
                         <Button 
-                            component={Link} to="/about" 
+                            component={Link} to="/room" 
                             variant="outlined" 
                             size="large" 
                             sx={{borderColor:"gray", color:"black"}}>
@@ -24,7 +24,6 @@ function Home() {
                 </div>
             </div>
             <h1>Features</h1>
-            
         </div>
     )
 }
