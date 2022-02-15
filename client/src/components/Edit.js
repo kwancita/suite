@@ -1,23 +1,23 @@
-import { useState } from 'react'
-import { useNavigate, Link } from "react-router-dom"
+import { useState } from "react"
 
-function FormBooking({roomID, addBooking, currentUser, room}) {
-    const [inDate, setInDate] = useState('')
-    const [outDate, setOutDate] = useState('')
-    const [guest, setGuest] = useState('')
+function Edit({setEdit, booking, onUpdate}) {
+    const [inDate, setInDate] = useState(booking.checkinDate)
+    const [outDate, setOutDate] = useState(booking.checkoutDate)
+    const [guest, setGuest] = useState(booking.guest)
     const [errors, setErrors] = useState([])
-    const navigate = useNavigate();
-    const path = '/rooms'
 
-    function handleSubmit(e){
+    function handleUpdate(updatedCard) {
+        onUpdate(updatedCard)
+    }
+
+    function handleFormUpdate(e) {
         e.preventDefault();
-        fetch('/bookings',{
-            method: 'POST',
+        fetch(`/bookings/${booking.id}`,{
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                room_id:roomID,
                 checkin_date:inDate,
                 checkout_date:outDate,
                 guest:guest
@@ -25,9 +25,8 @@ function FormBooking({roomID, addBooking, currentUser, room}) {
         })
         .then((r) => {
             if (r.ok){
-                r.json().then((newBooking) => {
-                    addBooking(newBooking)
-                    navigate("/user_booking")
+                r.json().then((newEdit) => {
+                    handleUpdate(newEdit)
                     setInDate('')
                     setOutDate('')
                     setGuest('')
@@ -39,10 +38,8 @@ function FormBooking({roomID, addBooking, currentUser, room}) {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <p>Hi, {currentUser.username}</p>
-                <h5>Booking for {room.name}</h5>
-                <input
+            <form onSubmit={handleFormUpdate}>
+            <input
                     type="date"
                     name="inDate"
                     value={inDate}
@@ -63,16 +60,14 @@ function FormBooking({roomID, addBooking, currentUser, room}) {
                     placeholder="Guest number"
                     onChange={(e) => setGuest(e.target.value)}
                 />
-                <p>num of nigth(s)</p>
-                <p>Total num*price</p>
                 {errors.map((err) => (
                     <li className="text-red-600" key={err}>{err}</li>
                 ))}
-                <button><Link to={path}>Cancel</Link></button>
+                <button onClick={()=>setEdit(false)} >Cancel</button>
                 <button type="submit">Confirm</button>
             </form>
         </div>
     )
 }
 
-export default FormBooking
+export default Edit

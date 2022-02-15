@@ -148,9 +148,19 @@
 //   );
 // };
 // export default Nav;
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-function Nav() {
+function Nav({setCurrentUser}) {
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    fetch("/logout", {
+        method: 'DELETE'
+    })
+    navigate('/')
+    setCurrentUser(null)
+  }
+
   return (
     <nav>
       <div>
@@ -165,7 +175,7 @@ function Nav() {
       <div>
         <Link to="/login">Login </Link>
         <Link to="/account">Account </Link>
-        <Link to="/logout">Logout </Link>
+        <button onClick={handleLogout}>Logout </button>
       </div>
     </nav>
   );
