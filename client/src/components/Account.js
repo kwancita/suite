@@ -1,7 +1,7 @@
 function Account() {
     return (
-        <div>
-            This is account 
+        <div><br/>
+            Your account information
         </div>
     )
 }
