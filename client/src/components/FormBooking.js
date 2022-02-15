@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link, useParams } from "react-router-dom"
 
-function FormBooking({roomID, addBooking, currentUser, room}) {
+function FormBooking({addBooking, currentUser, room}) {
     const [inDate, setInDate] = useState('')
     const [outDate, setOutDate] = useState('')
     const [guest, setGuest] = useState('')
     const [errors, setErrors] = useState([])
     const navigate = useNavigate();
     const path = '/rooms'
+    const params = useParams()
+    const roomID = params.id
+    console.log(roomID)
 
     function handleSubmit(e){
         e.preventDefault();
@@ -27,7 +30,7 @@ function FormBooking({roomID, addBooking, currentUser, room}) {
             if (r.ok){
                 r.json().then((newBooking) => {
                     addBooking(newBooking)
-                    navigate("/user_booking")
+                    navigate("/account")
                     setInDate('')
                     setOutDate('')
                     setGuest('')

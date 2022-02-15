@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 function Login({currentUser, setCurrentUser, roomID}) {
     const navigate = useNavigate();
     const [errors, setErrors] = useState([]);
-    const path = `/rooms/${roomID}`
+    // const path = `/rooms/${roomID}`
     const [formData, setFromData] = useState({
       username: "",
       password: "",
@@ -32,6 +32,7 @@ function Login({currentUser, setCurrentUser, roomID}) {
           if (r.ok) {
               r.json().then((user) => {
                   setCurrentUser(user);
+                  const path = roomID ? `/rooms/${roomID}` : "/"
                   navigate(path)
                   setFromData({
                       username: "",
