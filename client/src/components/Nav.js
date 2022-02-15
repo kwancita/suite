@@ -45,7 +45,7 @@
 //             component="div"
 //             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
 //           >
-//             TriHel
+//             Suite Finder
 //           </Typography>
 
 //           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -93,7 +93,7 @@
 //             component="div"
 //             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
 //           >
-//             TriHel
+//             Suite Finder
 //           </Typography>
 //           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 //             {/* {pages.map((page) => (
@@ -153,19 +153,22 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <nav>
-      <div>TriHel</div>
       <div>
+        <b>Suite Finder</b>
+      </div>
+      <div><br/>
         <Link to="/">Home</Link>
-        <Link to="/rooms">Roome</Link>
+        <br />
+        <Link to="/rooms">Rooms </Link>
         <Link to="/contact">Contact</Link>
       </div>
       <div>
-        <Link to="/login">Login</Link>
-        <Link to="/account">Account</Link>
-        <Link to="/logout">Logout</Link>
+        <Link to="/login">Login </Link>
+        <Link to="/account">Account </Link>
+        <Link to="/logout">Logout </Link>
       </div>
     </nav>
-  )
+  );
 }
 
 export default Nav
