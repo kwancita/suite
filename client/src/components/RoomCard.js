@@ -12,9 +12,10 @@ function RoomCard({room}) {
                 alt={name} 
             />
             </Link>
-            <Link to={path}><h3 className="font-semibold pl-4">{name}</h3></Link>
+            <Link to={path}><h3 >{name}</h3></Link>
             <p>{r_type}</p>
             <p>{price}</p>
+            <Link to={path}><button>More Detail</button></Link>
         </div>
     )
 }
