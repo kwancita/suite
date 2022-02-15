@@ -5,7 +5,7 @@ function Room({rooms}) {
     return (
         <div className="r">
             <div className="r-main"></div>
-            <h1>Asian Cuisine NYC</h1>
+            <h1>Our Room</h1>
             <div>
                 <div>
                     {rooms.map((room)=>(
