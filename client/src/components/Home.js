@@ -1,4 +1,4 @@
-import "./home.css"
+// import "./home.css"
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,7 @@ function Home() {
                             Get away from coding, let us take care your vacation</p>
                         </div>
                         <Button 
-                            component={Link} to="/room" 
+                            component={Link} to="/rooms" 
                             variant="outlined" 
                             size="large" 
                             sx={{borderColor:"gray", color:"black"}}>

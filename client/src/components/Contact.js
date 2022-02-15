@@ -1,7 +1,18 @@
+// import "./contact.css"
+
 function Contact() {
     return (
-        <div>
-            This is contact
+        <div className="c">
+            <form>
+                <input placeholder="name"/><br />
+                <input placeholder="name"/><br />
+                <input placeholder="name"/><br />
+                <input placeholder="name"/><br />
+                <input placeholder="name"/><br />
+                <input placeholder="name"/><br />
+                <input placeholder="name"/><br />
+                <input placeholder="name"/>
+            </form>   
         </div>
     )
 }
