@@ -1,0 +1,21 @@
+.r{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rc{
+    width: 80%;
+    height: 30vh;
+}
+
+.r-main{
+    background: rgba(238, 243, 239, 0.8);
+    width: 70%;
+    height: 55vh;
+    border-radius: 10px;
+    margin-top: 5%;
+}
