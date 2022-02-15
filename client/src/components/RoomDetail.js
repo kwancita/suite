@@ -7,7 +7,7 @@ function RoomDetail({currentUser, room, setRoom}) {
 
     return (
         <div>
-            <img srC={image} alt={name} />
+            <img src={image} alt={name} />
             <span>{name}</span>
             <span>{r_type}</span>
             <span>{price}</span>
