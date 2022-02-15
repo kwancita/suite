@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import About from "./About";
+import Room from "./Room";
 import Account from "./Account";
 import Contact from "./Contact";
 import Home from "./Home";
@@ -10,8 +10,8 @@ function Routing() {
     return (
         <div>
             <Routes>
-                <Route path="/home" element={<Home/>} />
-                <Route path="/about" element={<About/>} />
+                <Route path="/" element={<Home/>} />
+                <Route path="/room" element={<Room/>} />
                 <Route path="/contact" element={<Contact/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/signup" element={<Signup/>} />
