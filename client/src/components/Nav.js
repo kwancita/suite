@@ -11,9 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from "react-router-dom";
 
-const pages = ['Home', 'About', 'Contact'];
-const settings = ['Profile', 'Account', 'Logout'];
+// const pages = ['Home', 'About', 'Contact'];
+// const settings = ['Profile', 'Account', 'Logout'];
 
 const Nav = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,7 +36,7 @@ const Nav = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed" sx={{ color: 'white', background:'black'}} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -76,11 +77,14 @@ const Nav = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
+              <MenuItem component={Link} to="/home">Home</MenuItem>
+              <MenuItem component={Link}  to="/about">About</MenuItem>
+              <MenuItem component={Link} to="/contact">Contact</MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -92,7 +96,7 @@ const Nav = () => {
             TriHel
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -100,7 +104,10 @@ const Nav = () => {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
+            <Button component={Link} to="/home" sx={{ my: 2, color: 'white', display: 'block' }} >Home</Button>
+            <Button component={Link} to="/about" sx={{ my: 2, color: 'white', display: 'block' }} >About</Button>
+            <Button component={Link} to="/contact" sx={{ my: 2, color: 'white', display: 'block' }} >Contact</Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -125,11 +132,14 @@ const Nav = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {/* {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
+              <MenuItem component={Link} to="/login">Login</MenuItem>
+              <MenuItem component={Link} to="/account">Account</MenuItem>
+              <MenuItem onClick="" >Logout</MenuItem>
             </Menu>
           </Box>
         </Toolbar>
