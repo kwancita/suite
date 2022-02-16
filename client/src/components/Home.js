@@ -1,4 +1,4 @@
-// import "./home.css"
+import "./home.css"
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
@@ -28,7 +28,10 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* <h1>Features</h1> */}
+        <h1>Features</h1>
+        <h1>Features</h1>
+        <h1>Features</h1>
+        <h1>Features</h1>
       </div>
     );
 }
