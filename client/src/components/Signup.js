@@ -53,7 +53,7 @@ function Signup({setCurrentUser, roomID}) {
     return (
       <div className="ls-container">
         <form onSubmit={handleSubmit}>
-            <h2>Log In here</h2>
+            <h2>Sign up here</h2>
                 <input 
                     id="full_name"
                     type="text"
@@ -88,7 +88,7 @@ function Signup({setCurrentUser, roomID}) {
                 />
                 <span>{errors}</span>
                 <button type="submit">Signup</button>
-                <p>No account yet? <Link to="/login">Login</Link></p>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
           </form>
       </div>
     );

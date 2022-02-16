@@ -4,7 +4,7 @@ import "./room.css"
 function Room({rooms}) {
     return (
         <div className="r-container">
-            <h1>Our Room</h1>
+            <h1>Available Rooms</h1>
             <div className="r-card">
                     {rooms.map((room)=>(
                         <RoomCard 

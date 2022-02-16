@@ -49,10 +49,10 @@ function Login({currentUser, setCurrentUser, roomID}) {
     return (
         <div className="ls-container">
           {currentUser?(
-            <p>You already login</p>
+            <p>You are already logged in</p>
           ):(
             <form onSubmit={handleSubmit}>
-              <h2>Log In here</h2>
+              <h2>Login here</h2>
                   <input 
                       id="usernname-login"
                       type="text"
