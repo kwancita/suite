@@ -11,9 +11,9 @@ function Home() {
               <div className="home-content">
                 <h1>Welcome to Suite Finder</h1><br/>
                 <p>
-                  The easiest and most effective solution to your lodging
-                  needs <br /><br/>
-                  <b>Get away from coding, let us take care of your vacation</b>
+                  The Easiest and Most Effective Solution to Your Lodging
+                  Needs.<br /><br/><br/>
+                  <b>Get away from coding, let us take care of your vacation.</b>
                 </p>
               </div>
               <Button
