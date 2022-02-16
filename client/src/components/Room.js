@@ -1,20 +1,17 @@
 import RoomCard from "./RoomCard"
-// import "./room.css"
+import "./room.css"
 
 function Room({rooms}) {
     return (
-        <div className="r">
-            <div className="r-main"></div>
+        <div className="r-container">
             <h1>Our Room</h1>
-            <div>
-                <div>
+            <div className="r-card">
                     {rooms.map((room)=>(
                         <RoomCard 
                             key={room.id}
                             room={room}
                         />
                     ))}
-                </div>
             </div>
         </div>
     )

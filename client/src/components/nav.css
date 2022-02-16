@@ -1,10 +1,20 @@
-.r{
-    height: 100vh;
+.n{
+    background: black;
+    width: 100%;
+    height: 8vh;
+}
+
+.n-container{
     display: flex;
     align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    color:white;
+}
+
+Link{
+    color:white;
 }
 
 .r-main{

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import "./login_signup.css"
 
 function Signup({setCurrentUser, roomID}) {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ function Signup({setCurrentUser, roomID}) {
     }
 
     return (
-      <div>
+      <div className="ls-container">
         <form onSubmit={handleSubmit}>
             <h2>Log In here</h2>
                 <input 

@@ -1,4 +1,5 @@
 import Booking from "./Booking"
+import "./account.css"
 
 function Account({currentUser, bookings, setBookings}) {
 
@@ -19,7 +20,7 @@ function Account({currentUser, bookings, setBookings}) {
     }
 
     return (
-        <div><br/>
+        <div className="ac-container">
             Hello, {currentUser.username}
             <h1>Your Booking</h1>
                 {bookings.map((booking)=>(
