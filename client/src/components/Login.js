@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
+import "./login_signup.css"
 
 function Login({currentUser, setCurrentUser, roomID}) {
     const navigate = useNavigate();
@@ -46,7 +47,7 @@ function Login({currentUser, setCurrentUser, roomID}) {
     }
 
     return (
-        <div>
+        <div className="ls-container">
           {currentUser?(
             <p>You already login</p>
           ):(

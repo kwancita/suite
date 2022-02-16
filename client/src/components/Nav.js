@@ -13,9 +13,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useNavigate, Link  } from "react-router-dom";
 
-// const pages = ['Home', 'About', 'Contact'];
-// const settings = ['Profile', 'Account', 'Logout'];
-
 const Nav = ({setCurrentUser}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -87,11 +84,6 @@ const Nav = ({setCurrentUser}) => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
               <MenuItem component={Link} to="/">Home</MenuItem>
               <MenuItem component={Link}  to="/rooms">Rooms</MenuItem>
               <MenuItem component={Link} to="/contact">Contact</MenuItem>
@@ -106,15 +98,6 @@ const Nav = ({setCurrentUser}) => {
             Suite Finder
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {/* {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))} */}
             <Button component={Link} to="/" sx={{ my: 2, color: 'white', display: 'block' }} >Home</Button>
             <Button component={Link} to="/rooms" sx={{ my: 2, color: 'white', display: 'block' }} >Rooms</Button>
             <Button component={Link} to="/contact" sx={{ my: 2, color: 'white', display: 'block' }} >Contact</Button>
@@ -123,7 +106,7 @@ const Nav = ({setCurrentUser}) => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar sx={{ background:'white' }} alt="Remy Sharp" src="https://img.icons8.com/external-bearicons-glyph-bearicons/344/external-User-essential-collection-bearicons-glyph-bearicons.png" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -142,11 +125,6 @@ const Nav = ({setCurrentUser}) => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {/* {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))} */}
               <MenuItem component={Link} to="/login">Login</MenuItem>
               <MenuItem component={Link} to="/account">Account</MenuItem>
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
@@ -158,7 +136,11 @@ const Nav = ({setCurrentUser}) => {
   );
 };
 export default Nav;
+
+
+
 // import { useNavigate, Link } from "react-router-dom";
+// import "./nav.css"
 
 // function Nav({setCurrentUser}) {
 //   const navigate = useNavigate();
@@ -172,17 +154,12 @@ export default Nav;
 //   }
 
 //   return (
-//     <nav>
-//       <div>
+//     <nav className="n">
+//       <div className="n-container">
 //         <b>Suite Finder</b>
-//       </div>
-//       <div><br/>
-//         <Link to="/">Home</Link>
-//         <br />
+//         <Link classname="n-link" to="/">Home</Link>
 //         <Link to="/rooms">Rooms </Link>
 //         <Link to="/contact">Contact</Link>
-//       </div>
-//       <div>
 //         <Link to="/login">Login </Link>
 //         <Link to="/account">Account </Link>
 //         <button onClick={handleLogout}>Logout </button>

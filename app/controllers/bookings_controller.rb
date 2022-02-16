@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
     end
     
     def create
+        # byebug
         booking = current_user.bookings.create!(booking_params)
         render json: booking, status: :created
     end

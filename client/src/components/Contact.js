@@ -1,8 +1,8 @@
-// import "./contact.css"
+import "./contact.css"
 
 function Contact() {
     return (
-        <div className="c">
+        <div className="c-container">
             <form>
                 <input placeholder="name"/><br />
                 <input placeholder="name"/><br />

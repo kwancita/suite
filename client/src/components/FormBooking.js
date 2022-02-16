@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link, useParams } from "react-router-dom"
+import "./formBooking.css"
 
 function FormBooking({addBooking, currentUser, room}) {
     const [inDate, setInDate] = useState('')
@@ -41,7 +42,7 @@ function FormBooking({addBooking, currentUser, room}) {
         });
     }
     return (
-        <div>
+        <div className="fb-container">
             <form onSubmit={handleSubmit}>
                 <p>Hi, {currentUser.username}</p>
                 <h5>Booking for {room.name}</h5>
