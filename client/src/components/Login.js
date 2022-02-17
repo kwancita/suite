@@ -51,9 +51,10 @@ function Login({currentUser, setCurrentUser, roomID}) {
           {currentUser?(
             <p>You are already logged in</p>
           ):(
-            <form onSubmit={handleSubmit}>
+            <form className="ls-form" onSubmit={handleSubmit}>
               <h2>Login here</h2>
                   <input 
+                      className="ls-input"
                       id="usernname-login"
                       type="text"
                       name="username"
@@ -61,7 +62,9 @@ function Login({currentUser, setCurrentUser, roomID}) {
                       value={formData.username}
                       onChange={handleChange}
                   />
+                  <br />
                   <input 
+                      className="ls-input"
                       id="password-login"
                       type="password"
                       name="password"
@@ -69,9 +72,11 @@ function Login({currentUser, setCurrentUser, roomID}) {
                       value={formData.password}
                       onChange={handleChange}
                   />
-                  <span>{errors}</span>
-                  <button type="submit">Login</button>
-                  <p>No account yet? <Link to="/signup">Sign Up</Link></p>
+                  <br />
+                  <span className="ls-error">{errors}</span>
+                  <br />
+                  <button className="ls-button" type="submit">Login</button>
+                  <p>No account yet? <Link to="/signup" className="ls-link">Sign Up</Link></p>
             </form>
           )}
         </div>  

@@ -1,5 +1,6 @@
 import Booking from "./Booking"
 import "./account.css"
+import { Link } from "react-router-dom";
 
 function Account({currentUser, bookings, setBookings}) {
 
@@ -21,16 +22,23 @@ function Account({currentUser, bookings, setBookings}) {
 
     return (
         <div className="ac-container">
-            Hello, {currentUser.username}
-            <h1>Your Booking</h1>
-                {bookings.map((booking)=>(
-                    <Booking 
-                        key={booking.id}
-                        booking={booking}
-                        onUpdate={handleupdate}
-                        onDelete={handleDelete}
-                />
-            ))}    
+            {currentUser? (
+                <div>
+                    <p>Hello, {currentUser.username}</p>
+                    <h1>Your Booking</h1>
+                    {bookings.map((booking)=>(
+                        <Booking 
+                            key={booking.id}
+                            booking={booking}
+                            onUpdate={handleupdate}
+                            onDelete={handleDelete}
+                    />
+                ))}   
+                </div>  
+            ):(
+                <p>Please <Link to="/login">login</Link> or <Link to="/signup">signup</Link></p>
+            )}
+            
         </div>
     )
 }

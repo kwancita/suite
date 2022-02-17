@@ -8,6 +8,7 @@
     align-items: center;
     background-image: url('https://res.cloudinary.com/value-penguin/image/upload/c_lfill,dpr_1.0,f_auto,h_1600,q_auto,w_1600/v1/resort-pool-lounge-sunset_us1xno');
 }
+
 .home-main{
     background: rgba(238, 243, 239, 0.8);
     width: 70%;
@@ -15,12 +16,29 @@
     border-radius: 10px;
     margin-top: 5%;
 }
+
 .home-welcome{
     padding-top: 50px;
 }
+
 .home-content{
     padding-bottom: 50px;
     
+}
+
+.home-button{
+    margin: 5px;
+    width: 130px;
+    background-color: white;
+    border-style: solid black 1px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: medium;
+}
+
+:hover.home-button{
+    background-color: rgb(90, 89, 89);
+    color: white;
 }
 
 @media screen  and (max-width:480px){

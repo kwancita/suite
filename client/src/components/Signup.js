@@ -52,9 +52,10 @@ function Signup({setCurrentUser, roomID}) {
 
     return (
       <div className="ls-container">
-        <form onSubmit={handleSubmit}>
+        <form className="ls-form" onSubmit={handleSubmit}>
             <h2>Sign up here</h2>
                 <input 
+                    className="ls-input"
                     id="full_name"
                     type="text"
                     name="full_name"
@@ -62,7 +63,9 @@ function Signup({setCurrentUser, roomID}) {
                     value={formData.full_name}
                     onChange={handleChange}
                 />
+                <br />
                 <input 
+                    className="ls-input"
                     id="username-signup"
                     type="text"
                     name="username"
@@ -70,7 +73,9 @@ function Signup({setCurrentUser, roomID}) {
                     value={formData.username}
                     onChange={handleChange}
                 />
+                <br />
                 <input 
+                    className="ls-input"
                     id="email-signup"
                     type="text"
                     name="email"
@@ -78,7 +83,9 @@ function Signup({setCurrentUser, roomID}) {
                     value={formData.email}
                     onChange={handleChange}
                 />
+                <br />
                 <input 
+                    className="ls-input"
                     id="password-signup"
                     type="password"
                     name="password"
@@ -86,9 +93,12 @@ function Signup({setCurrentUser, roomID}) {
                     value={formData.password}
                     onChange={handleChange}
                 />
-                <span>{errors}</span>
-                <button type="submit">Signup</button>
-                <p>Already have an account? <Link to="/login">Login</Link></p>
+                <br />
+                {errors.map((err) => (
+                    <li className="ls-error" key={err}>{err}</li>
+                ))}
+                <button className="ls-button" type="submit">Signup</button>
+                <p>Already have an account? <Link to="/login" className="ls-link">Login</Link></p>
           </form>
       </div>
     );
