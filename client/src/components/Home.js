@@ -1,5 +1,4 @@
 import "./home.css"
-import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -16,15 +15,9 @@ function Home() {
                   <b>Get away from coding, let us take care of your vacation.</b>
                 </p>
               </div>
-              <Button
-                component={Link}
-                to="/rooms"
-                variant="outlined"
-                size="large"
-                sx={{ borderColor: "gray", color: "black" }}
-              >
+              <Link to="/rooms"><button className="home-button">
                 View Rooms
-              </Button>
+              </button></Link>
             </div>
           </div>
         </div>
