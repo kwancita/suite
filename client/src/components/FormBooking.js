@@ -12,6 +12,7 @@ function FormBooking({addBooking, currentUser, room}) {
     const params = useParams()
     const roomID = params.id
     console.log(roomID)
+    // const storeRoomID = localStorage.getItem("roomID")
 
     function handleSubmit(e){
         e.preventDefault();
