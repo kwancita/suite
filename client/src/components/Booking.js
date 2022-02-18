@@ -3,7 +3,7 @@ import Edit from "./Edit"
 import "./booking.css"
 
 function Booking({booking, onUpdate, onDelete}) {
-    const {room, checkin_date, checkout_date, guest, total} = booking
+    const {room, checkin_date, checkout_date, guest, total, stay} = booking
     console.log(booking)
     const [edit, setEdit] = useState(false)
 
@@ -25,6 +25,7 @@ function Booking({booking, onUpdate, onDelete}) {
                         <h4>{room.name}</h4>
                         <p><strong>Checkin Date:</strong>&nbsp;&nbsp;&nbsp;{checkin_date}</p>
                         <p><strong>Checkout Date:</strong>&nbsp;&nbsp;&nbsp;{checkout_date}</p>
+                        <p><strong>Night:</strong>&nbsp;&nbsp;&nbsp;{stay}</p>
                         <p><strong>Guest:</strong>&nbsp;&nbsp;&nbsp;{guest}</p>
                         <p><strong>Total:</strong>&nbsp;&nbsp;&nbsp;${total}</p>
                     </div>
