@@ -3,7 +3,7 @@ import Edit from "./Edit"
 import "./booking.css"
 
 function Booking({booking, onUpdate, onDelete}) {
-    const {room, checkin_date, checkout_date, guest} = booking
+    const {room, checkin_date, checkout_date, guest, total} = booking
     console.log(booking)
     const [edit, setEdit] = useState(false)
 
@@ -26,8 +26,7 @@ function Booking({booking, onUpdate, onDelete}) {
                         <p><strong>Checkin Date:</strong>&nbsp;&nbsp;&nbsp;{checkin_date}</p>
                         <p><strong>Checkout Date:</strong>&nbsp;&nbsp;&nbsp;{checkout_date}</p>
                         <p><strong>Guest:</strong>&nbsp;&nbsp;&nbsp;{guest}</p>
-                        {/* <p>night {date_of_number} 2</p> 
-                        <p>total {price}*{date_of_number} 1000</p> */}
+                        <p><strong>Total:</strong>&nbsp;&nbsp;&nbsp;${total}</p>
                     </div>
                 </div>
                 <div className="b-btn">
