@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Edit from "./Edit"
+import "./booking.css"
 
 function Booking({booking, onUpdate, onDelete}) {
     const {room, checkin_date, checkout_date, guest} = booking
@@ -14,15 +15,28 @@ function Booking({booking, onUpdate, onDelete}) {
     }
 
     return (
-        <div>
-            <img src={room.image} alt={room.name} />
-            <span>{room.name}</span>
-            <span>{checkin_date}</span>
-            <span>{checkout_date}</span>
-            <span>{guest}</span>
-            <button onClick={handleDelete}>Delete</button>
-            <button onClick={()=>{setEdit(true)}}>Edit</button>
-                {edit && <Edit setEdit={setEdit} booking={booking} onUpdate={onUpdate} />}
+        <div className="b-main">
+            <div className="b-div">
+                <div className="b-desc">
+                    <div>
+                        <img className="b-img" src={room.image} alt={room.name} />
+                    </div>
+                    <div className="b-desc1">
+                        <h4>{room.name}</h4>
+                        <p><strong>Checkin Date:</strong>&nbsp;&nbsp;&nbsp;{checkin_date}</p>
+                        <p><strong>Checkout Date:</strong>&nbsp;&nbsp;&nbsp;{checkout_date}</p>
+                        <p><strong>Guest:</strong>&nbsp;&nbsp;&nbsp;{guest}</p>
+                        {/* <p>night {date_of_number} 2</p> 
+                        <p>total {price}*{date_of_number} 1000</p> */}
+                    </div>
+                </div>
+                <div className="b-btn">
+                    <button className="b-button" onClick={handleDelete}>🗑️</button>
+                    <button className="b-button" onClick={()=>{setEdit(true)}}>✏️</button>
+                    {edit && <Edit setEdit={setEdit} booking={booking} onUpdate={onUpdate} />}
+                </div>
+                <hr/>
+            </div>
         </div>
     )
 }
